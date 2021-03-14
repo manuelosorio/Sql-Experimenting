@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "outDir": "dist",
+    "watch": false
+  },
+  "lib": ["es2015"],
+  "include": [
+    "./cypress/tsconfig.json",
+    "**/*.ts",
+    "./src/views/template/**/*.[html,pug]"
+  ],
+  "exclude": [
+    "dist/**/*.*"
+  ]
+}
