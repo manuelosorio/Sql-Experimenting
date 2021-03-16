@@ -1,0 +1,6 @@
+include default
+h1 Image Gallery
+div.container
+  each image in gallery
+    img(src="data:image/png;base64,"+ image)
+style(type="text/css").

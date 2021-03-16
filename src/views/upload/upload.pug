@@ -1,0 +1,5 @@
+include ../template/default
+form(action="/api/upload" method="POST" enctype="multipart/form-data")
+  input(type="text" name="name")
+  input(type="file" id="image" name="avatar" accept="image/png, image/jpeg" )
+  input(type="submit")

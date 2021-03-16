@@ -1,3 +1,28 @@
-body {
-  background: pink;
+/*body {*/
+/*  background: pink;*/
+/*}*/
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container img {
+  display: block;
+  width: 350px;
+  height: content-box;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+.hero {
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0;
 }

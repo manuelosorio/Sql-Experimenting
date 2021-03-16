@@ -9,8 +9,11 @@ export class ExampleModel {
   }
 
   async exampleQuery(id: number, next: queryCallback): Promise<Query> {
-    return await this.db.query(
-      'select name, age from example where id = ?',
+    return await this.db.query(`
+        SELECT name, 
+        age FROM example
+        WHERE id = ?
+      `,
       id,
       next
     );

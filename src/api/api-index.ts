@@ -1,11 +1,22 @@
 import express from 'express';
 import { exampleRoute } from './example/example.route';
 import { home } from '../views/home/home';
-import { notFound } from '../views/errors/404';
+import { uploadRoute } from './upload/upload.route';
+import { upload } from '../views/upload/upload.view';
+import { ErrorHandler } from '../views/errors/error-handler';
+import path from 'path';
+import { galleryRoute } from './gallery/gallery.route';
 
 export const api = express();
-
+const errorHandler = new ErrorHandler();
+const dirPath = path.join(__dirname, '../views/template');
+api.set('views', dirPath);
+api.set('view engine', 'pug');
 api.use('/api/example', exampleRoute);
+api.use('/api/upload', uploadRoute);
+api.use('/upload', upload);
+api.use('/gallery', galleryRoute);
 api.use('/assets', express.static('public/assets'));
+api.use('/uploads', express.static('public/uploads'));
 api.use('/', home);
-api.use(notFound);
+api.use(errorHandler.getErrorHandler().use(errorHandler.notFound));
